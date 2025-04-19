@@ -11,10 +11,10 @@ import { MagnifyingGlassCircleIcon } from '@heroicons/vue/24/solid/index.js'
         <MagnifyingGlassCircleIcon class="h-12 w-12 text-cyan-40"/>
       </div>
 
-      <div class="flex absolute left-1/2 transform -translate-x-1/2">
-        <h1 class="pr-2 ">рецепты</h1>
-        <h1 class="pr-2">о нас</h1>
-        <h1 class="pr-2">личный кабинет</h1>
+      <div class="flex absolute left-1/2 transform text-[25px] -translate-x-1/2">
+        <h1 class="pr-8 ">рецепты</h1>
+        <h1 class="pr-8">о нас</h1>
+        <h1 class="pr-8">личный кабинет</h1>
         <h1 class="">отзывы</h1>
       </div>
     </div>
