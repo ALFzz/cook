@@ -1,39 +1,14 @@
 <script setup>
 
 import TheHeader from '@/components/TheHeader.vue'
-import TheDelicious from '@/components/TheDelicious.vue'
-import TheLearnMore from '@/components/TheLearnMore.vue'
-import MainBlock from '@/components/MainBlock.vue'
+import TheFooter from '@/components/TheFooter.vue'
+import TheMain from '@/pages/TheMain.vue'
 </script>
 
 <template>
   <TheHeader/>
-  <TheDelicious/>
-  <TheLearnMore/>
-  <MainBlock img="/public/pancakes.png"
-             alt="pancakes"
-             :reversed="false"
-             header="Кулинарное планирование"
-             description="Используйте наш кулинарный опыт, чтобы создать идеальное меню для вашего мероприятия. Мы анализируем ваши предпочтения, согласуем рецепты с вашими пожеланиями и обеспечиваем незабываемые кулинарные впечатления."
-  />
-
-  <MainBlock img="/public/beans.png"
-             alt="pancakes"
-             :reversed="true"
-             header="Творческие рецепты"
-             description="Оставайтесь впереди с нашим креативным подходом к кулинарии. Мы предоставляем уникальные рецепты, которые решают ваши индивидуальные задачи, позволяя вам наслаждаться новыми кулинарными открытиями."
-  />
-
-  <MainBlock img="/public/pizza.png"
-             alt="pancakes"
-             :reversed="false"
-             header="Оптимизация процессов приготовления"
-             description="Раскройте весь потенциал вашей кухни с помощью наших услуг по оптимизации. От упрощения процессов до повышения эффективности, мы работаем над тем, чтобы максимизировать ваши кулинарные достижения и обеспечить долговременный успех."
-  />
-
-  <footer>
-
-  </footer>
+    <TheMain/>
+  <TheFooter/>
 
 
 
