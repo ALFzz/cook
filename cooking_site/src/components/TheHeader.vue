@@ -5,7 +5,7 @@ import { MagnifyingGlassCircleIcon } from '@heroicons/vue/24/solid/index.js'
 
 <template>
   <header>
-    <div class="flex items-center justify-end  w-full h-20 bg-white">
+    <div class="flex items-center justify-end  w-full h-20 bg-white border-b">
       <div class="flex">
         <input type="text" placeholder="Поиск" class="pr-10 border-gray-400 placeholder: pl-[14px] border-2 py-1 rounded-3xl">
         <MagnifyingGlassCircleIcon class="h-12 w-12 text-cyan-40"/>
