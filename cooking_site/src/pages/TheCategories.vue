@@ -1,6 +1,6 @@
 <script setup>
 
-import TheRecipesBanner from '@/components/TheRecipesBanner.vue'
+import TheRecipesBanner from '@/components/TheCategoriesBanner.vue'
 
 const banners = [
   { img: '/src/assets/img/first.png', label: 'первое' },
