@@ -12,6 +12,7 @@ import CookingPreparations from '@/components/CookingPreparations.vue'
 import CookingRequirements from '@/components/CookingRequirements.vue'
 import Cooking from '@/pages/Cooking.vue'
 import LogInModal from '@/components/LogInModal.vue'
+import ReviewModal from '@/components/ReviewModal.vue'
 
 
 </script>
@@ -19,20 +20,21 @@ import LogInModal from '@/components/LogInModal.vue'
 <!--flex-1 элемент увеличиваться и уменьшаться по мере необходимости, игнорируя его начальный размер-->
 
 <template>
-<!--  <TheHeader/>-->
+  <TheHeader/>
 <!--  <TheReviews/>-->
 <!--  <TheMain/>-->
 <!--  <Recipes/>-->
 <!--  <TheCategories/>-->
 <!--  <TheCabinet/>-->
 <!--  <Cooking/>-->
-  <LogInModal/>
+<!--  <LogInModal/>-->
+  <ReviewModal/>
 
 
 
 
-
-<!--  <TheFooter/>-->
+  <TheFooter/>
 
 </template>
+
 

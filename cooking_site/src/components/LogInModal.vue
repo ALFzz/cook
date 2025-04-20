@@ -6,7 +6,6 @@ const isOpen = ref(false)
 
 <template>
   <div class="flex justify-center mt-10">
-    <!-- Кнопка открытия -->
     <button
       @click="isOpen = true"
       class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
@@ -14,14 +13,13 @@ const isOpen = ref(false)
       Открыть модалку
     </button>
 
-    <!-- Модальное окно -->
     <transition name="fade">
       <div
         v-if="isOpen"
         class="fixed inset-0 z-50 flex  items-center justify-center bg-black bg-opacity-50"
         @click.self="isOpen = false"
       >
-        <div class="bg-[#577165] flex flex-col  w-[640px] h-[520px]  text-white p-6 rounded-lg w-96 shadow-lg">
+        <div class="bg-[#577165] flex flex-col  w-[640px] h-[540px]  text-white p-6 rounded-lg w-96 shadow-lg">
           <h2 class="text-xl text-center text-[30px] mb-10">Вход в личный кабинет</h2>
 
           <div class="flex flex-col px-5 ">
