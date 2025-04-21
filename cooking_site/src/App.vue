@@ -2,17 +2,12 @@
 
 import TheHeader from '@/components/TheHeader.vue'
 import TheFooter from '@/components/TheFooter.vue'
-import TheMain from '@/pages/TheMain.vue'
-import TheReviews from '@/pages/TheReviews.vue'
-import TheRecipes from '@/pages/TheCategories.vue'
-import Recipes from '@/pages/Recipes.vue'
-import TheCategories from '@/pages/TheCategories.vue'
-import TheCabinet from '@/pages/TheCabinet.vue'
-import CookingPreparations from '@/components/CookingPreparations.vue'
-import CookingRequirements from '@/components/CookingRequirements.vue'
-import Cooking from '@/pages/Cooking.vue'
-import LogInModal from '@/components/LogInModal.vue'
-import ReviewModal from '@/components/ReviewModal.vue'
+import AuthorizationModal from '@/components/AuthorizationModal.vue'
+
+
+import { ref } from 'vue'
+
+const showModal  = ref(false)
 
 
 </script>
@@ -20,10 +15,12 @@ import ReviewModal from '@/components/ReviewModal.vue'
 <!--flex-1 элемент увеличиваться и уменьшаться по мере необходимости, игнорируя его начальный размер-->
 
 <template>
-  <TheHeader/>
+  <TheHeader @toggleModal="showModal = true"/>
   <RouterView/>
+  <AuthorizationModal :is-open="showModal" @closeModal="showModal = false"/>
   <TheFooter/>
 
 </template>
+
 
 

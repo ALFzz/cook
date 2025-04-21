@@ -1,6 +1,24 @@
 <script setup>
 
+import LogInModal from '@/components/AuthorizationModal.vue'
+
 import { MagnifyingGlassCircleIcon } from '@heroicons/vue/24/solid/index.js'
+
+import { ref } from 'vue'
+
+const isOpen = ref(false)
+
+function toggleOpen() {
+  isOpen.value = !isOpen.value
+  console.log(isOpen.value)
+}
+
+const emit = defineEmits(['toggleModal'])
+
+function handleClick() {
+  emit('toggleModal')
+}
+
 </script>
 
 <template>
@@ -16,13 +34,18 @@ import { MagnifyingGlassCircleIcon } from '@heroicons/vue/24/solid/index.js'
           <h1 class="pr-8">рецепты</h1>
         </RouterLink>
 
+
+
         <RouterLink to="/">
           <h1 class="pr-8">о нас</h1>
         </RouterLink>
 
-        <RouterLink to="/cabinet">
-          <h1 class="pr-8">личный кабинет</h1>
-        </RouterLink>
+        <div @click="handleClick">
+          <h1 class="pr-8" >личный кабинет</h1>
+        </div>
+
+
+
 
         <RouterLink to="/reviews">
           <h1 class="">отзывы</h1>
