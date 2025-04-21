@@ -21,18 +21,7 @@ import ReviewModal from '@/components/ReviewModal.vue'
 
 <template>
   <TheHeader/>
-<!--  <TheReviews/>-->
-<!--  <TheMain/>-->
-<!--  <Recipes/>-->
-<!--  <TheCategories/>-->
-<!--  <TheCabinet/>-->
-<!--  <Cooking/>-->
-<!--  <LogInModal/>-->
-  <ReviewModal/>
-
-
-
-
+  <RouterView/>
   <TheFooter/>
 
 </template>

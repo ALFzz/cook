@@ -4,7 +4,7 @@ import { HeartIcon } from '@heroicons/vue/24/solid/index.js'
 </script>
 
 <template>
-  <div>
+  <div @click.prevent="$router.push({ name: 'Cooking' })">
     <h2 class="text-center text-[24px]">Тыквенный крем-суп</h2>
     <img src="/src/assets/img/pumpkin_soup.png" class="" alt="pumpkin_soup">
     <div class="flex flex-row  items-center justify-between">
