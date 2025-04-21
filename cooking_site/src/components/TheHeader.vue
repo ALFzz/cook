@@ -30,7 +30,7 @@ function handleClick() {
       </div>
 
       <div class="flex absolute left-1/2 transform text-[25px] -translate-x-1/2">
-        <RouterLink to="/recipes">
+        <RouterLink to="/categories">
           <h1 class="pr-8">рецепты</h1>
         </RouterLink>
 

@@ -34,15 +34,16 @@ const router = createRouter({
       component: TheCategories
     },
     {
-      name: 'Recipes',
-      path: '/recipes',
-      component: Recipes
-    },
-    {
       name: 'Cabinet',
       path: '/cabinet',
       component: TheCabinet
     },
+    {
+      name: 'Recipes',
+      path: '/categories/:label',
+      component: Recipes
+    },
+
   ]
 })
 

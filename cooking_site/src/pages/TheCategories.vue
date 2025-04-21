@@ -1,6 +1,7 @@
 <script setup>
 
 import TheCategoriesBanner from '@/components/TheCategoriesBanner.vue'
+import { useRoute } from 'vue-router'
 
 const banners = [
   { img: '/src/assets/img/first.png', label: 'первое' },
@@ -8,6 +9,7 @@ const banners = [
   { img: '/src/assets/img/snacks.png', label: 'закуски' },
   { img: '/src/assets/img/deserts.png', label: 'десерты' },
 ];
+
 </script>
 
 <template>
@@ -18,6 +20,7 @@ const banners = [
     :key="index"
     :img="item.img"
     :label="item.label"
+    @click.prevent="$router.push('categories/' + item.label)"
   />
 </template>
 

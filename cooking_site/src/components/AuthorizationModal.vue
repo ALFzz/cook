@@ -9,7 +9,7 @@ const isRegistration = ref(false)
 </script>
 
 <template>
-  <div class="flex justify-center mt-10">
+  <div class="flex justify-center">
 
     <transition name="fade">
       <div
