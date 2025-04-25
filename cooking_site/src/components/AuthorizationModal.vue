@@ -1,11 +1,41 @@
 <script setup>
 import { ref } from 'vue'
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth'
+import {useRouter} from "vue-router";
 
 
 defineProps({ isOpen: Boolean })
-defineEmits(['closeModal'])
+const emit = defineEmits(['closeModal'])
+const router = useRouter()
+
 
 const isRegistration = ref(false)
+
+
+const email = ref()
+const password = ref()
+
+const signUp = async () => {
+  try {
+    await createUserWithEmailAndPassword(getAuth(), email.value, password.value)
+    emit('closeModal')
+    router.push('/cabinet')
+  } catch (e) {
+    alert(e.message)
+  }
+}
+
+const signIn = async () => {
+  try {
+    await signInWithEmailAndPassword(getAuth(), email.value, password.value)
+    emit('closeModal')
+    router.push('/cabinet')
+  } catch (e) {
+    alert(e.message)
+  }
+}
+
+
 </script>
 
 <template>
@@ -27,19 +57,19 @@ const isRegistration = ref(false)
 
           <div class="flex flex-col px-5 pt-5">
             <p class="text-start">электронная почта</p>
-            <input type="text" class="bg-[#456356] h-12  rounded-2xl">
+            <input type="email" v-model="email" class="bg-[#456356] h-12  rounded-2xl">
           </div>
 
           <div class="flex flex-col px-5 pt-5">
             <p class="text-start">пароль</p>
-            <input type="text" class="bg-[#456356] h-12  rounded-2xl">
+            <input type="password" v-model="password" class="bg-[#456356] h-12  rounded-2xl">
           </div>
 
 
 
           <div class="text-center">
             <button
-              @click="isOpen = false"
+              @click="signIn"
               class="px-16 py-4 mt-12 text-[28px] bg-[#374d43] rounded hover:bg-gray-400 transition"
             >
               войти
@@ -71,25 +101,25 @@ const isRegistration = ref(false)
 
           <div class="flex flex-col px-5 pt-5">
             <p class="text-start">электронная почта</p>
-            <input type="text" class="bg-[#456356] h-12  rounded-2xl">
+            <input type="email" v-model="email" class="bg-[#456356] h-12  rounded-2xl">
           </div>
 
           <div class="flex flex-col px-5 pt-5">
             <p class="text-start">пароль</p>
-            <input type="text" class="bg-[#456356] h-12  rounded-2xl">
+            <input type="password" v-model="password" class="bg-[#456356] h-12  rounded-2xl">
           </div>
 
-          <div class="flex flex-col px-5 pt-5">
-            <p class="text-start">повторите пароль</p>
-            <input type="text" class="bg-[#456356] h-12  rounded-2xl">
-          </div>
+<!--          <div class="flex flex-col px-5 pt-5">-->
+<!--            <p class="text-start">повторите пароль</p>-->
+<!--            <input type="text" class="bg-[#456356] h-12  rounded-2xl">-->
+<!--          </div>-->
 
           <div class="text-center">
             <button
-              @click="isOpen = false"
-              class="px-16 py-4 mt-12 text-[28px] bg-[#374d43] rounded hover:bg-gray-400 transition"
+                @click="signUp"
+                class="px-16 py-4 mt-12 text-[28px] bg-[#374d43] rounded hover:bg-gray-400 transition"
             >
-              войти
+              Зарегистрироваться
             </button>
             <div class="flex flex-row text-center pt-2 items-center justify-center">
               <h4 class="text-[16px]">у вас уже есть аккаут?</h4>

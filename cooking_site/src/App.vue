@@ -5,9 +5,23 @@ import TheFooter from '@/components/TheFooter.vue'
 import AuthorizationModal from '@/components/AuthorizationModal.vue'
 
 
-import { ref } from 'vue'
+import {onMounted, ref} from 'vue'
+import {getAuth, onAuthStateChanged} from "firebase/auth";
+import {useUserStore} from "@/stores/user.js";
 
 const showModal  = ref(false)
+const userStore = useUserStore()
+
+onMounted(() => {
+  onAuthStateChanged(getAuth(), (user) => {
+    if (user) {
+      console.log(user)
+      userStore.userId = user.uid
+    } else {
+      userStore.userId = ''
+    }
+  })
+})
 
 
 </script>
