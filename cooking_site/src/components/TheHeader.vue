@@ -4,19 +4,36 @@ import LogInModal from '@/components/AuthorizationModal.vue'
 
 import { MagnifyingGlassCircleIcon } from '@heroicons/vue/24/solid/index.js'
 
-import { ref } from 'vue'
+import {computed, ref} from 'vue'
+import {getAuth, onAuthStateChanged} from "firebase/auth";
+import {useRouter} from "vue-router";
 
 const isOpen = ref(false)
+const router = useRouter()
 
 function toggleOpen() {
   isOpen.value = !isOpen.value
   console.log(isOpen.value)
 }
 
+
+
+
+
 const emit = defineEmits(['toggleModal'])
 
 function handleClick() {
-  emit('toggleModal')
+  onAuthStateChanged(getAuth(), (user) => {
+    console.log(user)
+    if (user) {
+      router.push('/cabinet')
+      return true
+    } else {
+      console.log('false')
+      emit('toggleModal')
+
+    }
+  })
 }
 
 </script>
@@ -43,8 +60,6 @@ function handleClick() {
         <div @click="handleClick">
           <h1 class="pr-8" >личный кабинет</h1>
         </div>
-
-
 
 
         <RouterLink to="/reviews">
