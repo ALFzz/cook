@@ -9,7 +9,7 @@ defineProps({
 
 <template>
   <div class="relative">
-    <img :src="img" :alt="label" class="brightness-75">
+    <img :src="img" :alt="label" class="brightness-75 w-full">
     <div class="absolute flex flex-row items-center justify-center w-full text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <h1 class="font-semibold text-[100px]">{{label}}</h1>
     </div>

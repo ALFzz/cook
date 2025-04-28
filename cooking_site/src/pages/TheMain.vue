@@ -15,7 +15,7 @@ import TheDelicious from '@/components/TheDelicious.vue'
              description="Используйте наш кулинарный опыт, чтобы создать идеальное меню для вашего мероприятия. Мы анализируем ваши предпочтения, согласуем рецепты с вашими пожеланиями и обеспечиваем незабываемые кулинарные впечатления."
   />
 
-  <MainBlock img="/src/assets/img/beans.png"
+  <MainBlock img="/src/assets/img/beans.jpg"
              alt="pancakes"
              :reversed="true"
              header="Творческие рецепты"

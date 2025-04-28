@@ -39,6 +39,9 @@ const checkAuth = (to, from, next) => {
 
 
 const router = createRouter({
+  scrollBehavior() {
+    return {top: 0}
+  },
   history: createWebHistory(),
   routes: [
     {
