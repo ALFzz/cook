@@ -3,6 +3,8 @@
 import CookingPreparations from '@/components/CookingPreparations.vue'
 import CookingRequirements from '@/components/CookingRequirements.vue'
 import ReviewItem from "@/components/ReviewItem.vue";
+import ReviewModal from "@/components/ReviewModal.vue";
+import {ref} from "vue";
 
 const reviews = [
   'Рецепт просто супер! Получилось очень вкусно, вся семья в восторге. Спасибо!',
@@ -11,6 +13,8 @@ const reviews = [
   'Отличный рецепт! И вкусно, и полезно. Идеально для тех, кто следит за своим здоровьем. Обязательно буду готовить еще!',
   'Очень рекомендую рецепт куриного бульона! Простой в приготовлении, из доступных ингредиентов, а результат превосходит все ожидания!',
 ];
+
+const showReviewModal  = ref(false)
 </script>
 
 <template>
@@ -18,7 +22,9 @@ const reviews = [
   <CookingRequirements/>
   <div class="ml-24 mt-16 flex flex-row gap-5 items-center">
     <h2 class="text-[24px] font-medium">Понравился рецепт?</h2>
-    <button class="text-[20px] w-fit px-10 py-4 text-center border-black border rounded-2xl shadow-2xl bg-gray-300 text-black">
+    <button
+        @click="showReviewModal = true"
+        class="text-[20px] w-fit px-10 py-4 text-center border-black border rounded-2xl shadow-2xl bg-gray-300 text-black">
       Оставь свой отзыв:)
     </button>
   </div>
@@ -29,6 +35,8 @@ const reviews = [
       :is-in-cooking="true"
       :class="index === reviews.length - 1 ? 'mb-12' : ''"
   />
+
+  <ReviewModal :is-open="showReviewModal"  @closeModal="showReviewModal = false"  />
 </template>
 
 <style scoped>

@@ -76,7 +76,7 @@ const signIn = async () => {
             </button>
             <div class="flex flex-row text-center pt-2 items-center justify-center">
               <h4 class="text-[16px]">у вас нет аккаунта?</h4>
-              <h4 class="text-[16px] text-[#CDFFE9] pl-1" @click.prevent="isRegistration = true">Зарегистрироваться</h4>
+              <h4 class="text-[16px] text-[#CDFFE9] pl-1 cursor-pointer transition duration-200 hover:text-[#64E5AD]" @click.prevent="isRegistration = true">Зарегистрироваться</h4>
 
             </div>
           </div>
@@ -91,7 +91,7 @@ const signIn = async () => {
         class="fixed inset-0 z-50 flex  items-center justify-center bg-black bg-opacity-50"
         @click.self="$emit('closeModal')"
       >
-        <div class="bg-[#577165] flex flex-col  w-[640px] h-[630px]  text-white p-6 rounded-lg w-96 shadow-lg">
+        <div class="bg-[#577165] flex flex-col  w-[640px] h-[540px]  text-white p-6 rounded-lg w-96 shadow-lg">
           <h2  class="text-xl text-center text-[30px] mb-10">Регистрация</h2>
 
           <div class="flex flex-col px-5 ">
@@ -123,7 +123,7 @@ const signIn = async () => {
             </button>
             <div class="flex flex-row text-center pt-2 items-center justify-center">
               <h4 class="text-[16px]">у вас уже есть аккаут?</h4>
-              <h4 class="text-[16px] text-[#CDFFE9] pl-1" @click.prevent="isRegistration = false">Войти</h4>
+              <h4 class="text-[16px] text-[#CDFFE9] cursor-pointer pl-1 transition duration-200 hover:text-[#64E5AD]" @click.prevent="isRegistration = false">Войти</h4>
 
             </div>
           </div>

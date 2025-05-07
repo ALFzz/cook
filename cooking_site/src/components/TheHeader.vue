@@ -58,7 +58,7 @@ function handleClick() {
         </RouterLink>
 
         <div @click="handleClick">
-          <h1 class="pr-8" >личный кабинет</h1>
+          <h1 class="pr-8 cursor-pointer"  >личный кабинет</h1>
         </div>
 
 

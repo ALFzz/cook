@@ -16,6 +16,6 @@ const signOutMethod = async () => {
 <template>
   <div class="text-center">
     <div class="bg-gray-300 w-[320px] h-80 rounded-full "></div>
-    <h2 class="mt-5 text-[24px] text-red-600 font-medium" @click="signOutMethod">Выйти</h2>
+    <h2 class="mt-5 text-[24px] text-red-600 font-medium cursor-pointer transition duration-200 hover:text-[#812828]" @click="signOutMethod">Выйти</h2>
   </div>
 </template>

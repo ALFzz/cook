@@ -12,7 +12,7 @@ const banners = [
   { img: '/src/assets/img/deserts.png', label: 'десерты' },
 ];
 
-const showRecipeAddModal  = ref(true)
+const showRecipeAddModal  = ref(false)
 
 </script>
 
@@ -30,7 +30,7 @@ const showRecipeAddModal  = ref(true)
   <div class="mt-8 mb-10 flex justify-center">
     <button
         @click="showRecipeAddModal = true"
-        class="text-[20px] w-fit px-20 py-3 text-center border-black border rounded-2xl shadow-2xl bg-gray-300 text-black"
+        class="text-[28px] transition duration-150 hover:bg-gray-300 w-fit px-20 py-3 text-center border-black border rounded-2xl shadow-2xl bg-white  text-black"
     >
       добавить рецепт
     </button>

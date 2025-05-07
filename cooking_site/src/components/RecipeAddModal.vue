@@ -1,7 +1,5 @@
 <script setup>
-import { ref } from 'vue'
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth'
-import {useRouter} from "vue-router";
+
 
 
 defineProps({ isOpen: Boolean })
