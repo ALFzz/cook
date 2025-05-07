@@ -9,7 +9,7 @@ defineProps({
 </script>
 
 <template>
-  <div v-if="!reversed" class="flex flex-row w-full">
+  <div v-if="!reversed" class="flex flex-row">
     <img :src="img" :alt="alt" class="w-1/2" >
     <div class="flex flex-col justify-center">
       <h1 class="ml-10 text-[48px]">{{header}}</h1>

@@ -8,8 +8,10 @@ import AuthorizationModal from '@/components/AuthorizationModal.vue'
 import {onMounted, ref} from 'vue'
 import {getAuth, onAuthStateChanged} from "firebase/auth";
 import {useUserStore} from "@/stores/user.js";
+import RecipeAddModal from "@/components/RecipeAddModal.vue";
 
-const showModal  = ref(false)
+const showAuthModal  = ref(false)
+
 const userStore = useUserStore()
 
 onMounted(() => {
@@ -26,14 +28,16 @@ onMounted(() => {
 
 
 
+
+
 </script>
 
 <!--flex-1 элемент увеличиваться и уменьшаться по мере необходимости, игнорируя его начальный размер-->
 
 <template>
-  <TheHeader @toggleModal="showModal = true"/>
+  <TheHeader @toggleModal="showAuthModal = true"/>
   <RouterView/>
-  <AuthorizationModal :is-open="showModal" @closeModal="showModal = false"/>
+  <AuthorizationModal :is-open="showAuthModal" @closeModal="showAuthModal = false"/>
   <TheFooter/>
 
 </template>

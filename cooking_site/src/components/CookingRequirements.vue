@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="flex flex-col text-[20px] ml-24 mt-14">
+  <div class="flex flex-col text-[20px] ml-24 mt-14 pr-20">
     <h2 class="text-[24px]">Приготовление</h2>
 
 
@@ -37,7 +37,7 @@
     </ul>
 
     <div>
-      <h2 class="text-[24px]">Подача</h2>
+      <h2 class="text-[24px] ">Подача</h2>
       <h3 class="ml-10 mt-5 mb-12">Подавай с ягодами, вареньем, карамельным или шоколадным соусом. Особенно вкусно с малиновым пюре или кислой вишней!</h3>
     </div>
 

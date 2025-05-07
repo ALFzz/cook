@@ -2,6 +2,8 @@
 
 import TheCategoriesBanner from '@/components/TheCategoriesBanner.vue'
 import { useRoute } from 'vue-router'
+import RecipeAddModal from "@/components/RecipeAddModal.vue";
+import {ref} from "vue";
 
 const banners = [
   { img: '/src/assets/img/first.png', label: 'первое' },
@@ -9,6 +11,8 @@ const banners = [
   { img: '/src/assets/img/snacks.png', label: 'закуски' },
   { img: '/src/assets/img/deserts.png', label: 'десерты' },
 ];
+
+const showRecipeAddModal  = ref(true)
 
 </script>
 
@@ -22,6 +26,17 @@ const banners = [
     :label="item.label"
     @click.prevent="$router.push('categories/' + item.label)"
   />
+
+  <div class="mt-8 mb-10 flex justify-center">
+    <button
+        @click="showRecipeAddModal = true"
+        class="text-[20px] w-fit px-20 py-3 text-center border-black border rounded-2xl shadow-2xl bg-gray-300 text-black"
+    >
+      добавить рецепт
+    </button>
+  </div>
+
+  <RecipeAddModal :is-open="showRecipeAddModal" @closeModal="showRecipeAddModal = false"/>
 </template>
 
 <style scoped>
