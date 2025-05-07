@@ -39,36 +39,37 @@ function handleClick() {
 </script>
 
 <template>
-  <header>
-    <div class="flex items-center justify-end  w-full h-20 bg-white border-b">
-      <div class="flex">
-        <input type="text" placeholder="Поиск" class="pr-10 border-gray-400 placeholder: pl-[14px] border-2 py-1 rounded-3xl">
-        <MagnifyingGlassCircleIcon class="h-12 w-12 text-cyan-40"/>
+  <header class="sticky top-0 w-full bg-white border-b-2 px-4">
+    <div class="relative flex flex-col lg:flex-row items-center justify-between gap-8 py-4">
+
+      <!-- Меню: вертикально на мобилках, центрировано абсолютно на больших -->
+      <nav
+          class="flex flex-col items-center gap-8 text-[25px] max-xl:text-[20px] max-lg:text-[25px]
+               lg:flex-row
+               lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2"
+      >
+        <RouterLink to="/categories"><h1>рецепты</h1></RouterLink>
+        <RouterLink to="/"><h1>о нас</h1></RouterLink>
+        <div @click="handleClick" class="cursor-pointer"><h1>личный кабинет</h1></div>
+        <RouterLink to="/reviews"><h1>отзывы</h1></RouterLink>
+      </nav>
+
+      <!-- Поиск -->
+      <div class="relative w-[250px]  max-lg:w-[320px]  lg:ml-auto">
+        <input
+            type="text"
+            placeholder="Поиск"
+            class="w-full max-md: pl-4 pr-10 py-2 border-2 border-gray-400 rounded-3xl placeholder-gray-500 focus:outline-none"
+        />
+        <MagnifyingGlassCircleIcon
+            class="w-14 h-14 transition duration-200 hover:text-[#628B79] text-[#456356] absolute -right-1.5 top-1/2 -translate-y-1/2 cursor-pointer"
+        />
       </div>
 
-      <div class="flex absolute left-1/2 transform text-[25px] -translate-x-1/2">
-        <RouterLink to="/categories">
-          <h1 class="pr-8">рецепты</h1>
-        </RouterLink>
-
-
-
-        <RouterLink to="/">
-          <h1 class="pr-8">о нас</h1>
-        </RouterLink>
-
-        <div @click="handleClick">
-          <h1 class="pr-8 cursor-pointer"  >личный кабинет</h1>
-        </div>
-
-
-        <RouterLink to="/reviews">
-          <h1 class="">отзывы</h1>
-        </RouterLink>
-      </div>
     </div>
   </header>
 </template>
+
 
 <style scoped>
 
