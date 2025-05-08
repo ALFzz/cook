@@ -9,11 +9,8 @@ defineProps({
   <div class="flex w-full sm:w-2/3 lg:w-1/3 px-4">
     <div class="bg-white rounded-full w-5 mt-1"></div>
     <div class="ml-3 flex flex-col justify-between">
-      <h3 class="text-base sm:text-lg md:text-[19px] font-medium">{{header}}</h3>
-      <h4 class="text-sm sm:text-base md:text-[17px] pt-5">{{description}}.</h4>
+      <h3 class="text-base sm:text-lg md:text-[19px] font-medium">{{ header }}</h3>
+      <h4 class="text-sm sm:text-base md:text-[17px] pt-5">{{ description }}.</h4>
     </div>
   </div>
-
 </template>
-
-

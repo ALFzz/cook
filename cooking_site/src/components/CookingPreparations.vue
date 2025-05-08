@@ -1,21 +1,25 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
   <div class="flex flex-col lg:flex-row w-full mt-14 max-lg:mt-0">
     <!-- Картинка, занимающая 50% ширины на больших экранах и всю ширину на мобильных устройствах -->
     <div class="w-full lg:w-1/2 ml-24 max-lg:ml-0">
       <img
-          class="w-full h-[500px] object-cover"
-          src="/src/assets/img/cake_recipe.png"
-          alt="cake_recipe"
+        class="w-full h-[500px] object-cover"
+        src="/src/assets/img/cake_recipe.png"
+        alt="cake_recipe"
       />
     </div>
 
     <!-- Блок с текстом, занимающий оставшуюся половину экрана на больших экранах и всю ширину на мобильных -->
-    <div class="flex flex-col w-full lg:w-1/2 text-base sm:text-sm md:text-lg lg:text-xl pl-6 sm:pl-8 lg:pl-12 pr-6 sm:pr-8 lg:pr-12 mt-6 lg:mt-0">
+    <div
+      class="flex flex-col w-full lg:w-1/2 text-base sm:text-sm md:text-lg lg:text-xl pl-6 sm:pl-8 lg:pl-12 pr-6 sm:pr-8 lg:pr-12 mt-6 lg:mt-0"
+    >
       <h3 class="mb-5 text-justify leading-relaxed">
-        Чизкейк — это десерт, основой которого является сырная масса, чаще всего приготовленная из сливочного сыра, творога или рикотты, с добавлением сахара, яиц и других ингредиентов. Обычно он располагается на песочной или бисквитной основе и может быть запечённым или без выпечки.
+        Чизкейк — это десерт, основой которого является сырная масса, чаще всего приготовленная из
+        сливочного сыра, творога или рикотты, с добавлением сахара, яиц и других ингредиентов.
+        Обычно он располагается на песочной или бисквитной основе и может быть запечённым или без
+        выпечки.
       </h3>
 
       <div class="flex flex-col lg:flex-row gap-8 lg:gap-20">
