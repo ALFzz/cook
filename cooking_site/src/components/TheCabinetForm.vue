@@ -3,27 +3,31 @@
 </script>
 
 <template>
-  <div class="flex flex-col w-full  ml-20">
-    <div>
-      <h3 class="text-[24px]">ФИО:</h3>
-      <div class="bg-gray-300 w-1/2 h-16 mt-5 rounded-2xl"></div>
+  <div class="flex flex-col w-full max-w-4xl text-[18px] sm:text-[20px]">
+    <!-- ФИО -->
+    <div class="mb-6">
+      <h3 class="text-xl sm:text-2xl mb-3">ФИО:</h3>
+      <div class="bg-gray-300 w-full h-14 sm:h-16 rounded-2xl"></div>
     </div>
 
-    <div class="mt-5">
-      <h3 class="text-[24px]">Дата рождения:</h3>
-      <div class="bg-gray-300 w-1/2 h-16 mt-5 rounded-2xl"></div>
+    <!-- Дата рождения -->
+    <div class="mb-6">
+      <h3 class="text-xl sm:text-2xl mb-3">Дата рождения:</h3>
+      <div class="bg-gray-300 w-full h-14 sm:h-16 rounded-2xl"></div>
     </div>
 
-    <div class="mt-20">
-      <h3 class="text-[24px]">Избранные рецепты:</h3>
-      <div class="  bg-gray-300 w-7/12 h-80 mt-5 text-center  rounded-2xl">
-        <h3 class="text-[24px] pt-8">Вы еще не добавили рецепты:(</h3>
-        <button class=" px-16 py-3 transition duration-150 hover:bg-gray-300  text-center text-[32px]  border-black border  rounded-3xl shadow-2xl bg-white text-black mt-7"
-                @click.prevent="$router.push({name: 'Categories'})">
-          к рецептам
+    <!-- Избранные рецепты -->
+    <div class="mt-10">
+      <h3 class="text-xl sm:text-2xl mb-4">Избранные рецепты:</h3>
+      <div class="bg-gray-300 w-full h-72 sm:h-80 rounded-2xl text-center flex flex-col items-center justify-center p-4">
+        <h3 class="text-lg sm:text-xl">Вы еще не добавили рецепты:(</h3>
+        <button
+            class="mt-6 px-8 sm:px-12 py-3 text-base sm:text-xl border border-black rounded-3xl shadow-xl bg-white text-black hover:bg-gray-200 transition"
+            @click.prevent="$router.push({ name: 'Categories' })">
+          К рецептам
         </button>
       </div>
     </div>
-
   </div>
+
 </template>
