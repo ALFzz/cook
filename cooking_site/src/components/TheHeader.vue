@@ -39,7 +39,7 @@ function handleClick() {
 </script>
 
 <template>
-  <header class="sticky top-0 w-full bg-white border-b-2 px-4">
+  <header class="sticky top-0 w-full bg-white border-b-2 px-4 z-50">
     <div class="relative flex flex-col lg:flex-row items-center justify-between gap-8 py-4">
 
       <!-- Меню: вертикально на мобилках, центрировано абсолютно на больших -->
