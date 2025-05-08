@@ -3,13 +3,16 @@
 </script>
 
 <template>
-  <div class="flex flex-row  ">
-    <img src="/src/assets/img/delicious.jpg" class="w-5/12" alt="Delicious">
-    <div class="flex flex-col justify-center mb-12 px-8">
-      <h1 class="text-4xl md:text-[75px]  leading-tight">Вкусные моменты</h1>
-      <h3 class="text-base md:text-[20px] mt-4">
+  <div class="flex flex-row w-full ">
+    <img src="/src/assets/img/delicious.jpg" class="w-5/12  object-cover" alt="Delicious">
+    <div class="flex flex-col justify-center px-2 sm:px-4 md:px-8 mb-12 w-7/12">
+      <h1 class="text-xl sm:text-2xl md:text-4xl lg:text-[75px] leading-tight">
+        Вкусные моменты
+      </h1>
+      <h3 class="text-sm sm:text-base md:text-lg lg:text-[20px] mt-10 ml-2">
         Мы поможем вам создать незабываемые моменты с нашими уникальными рецептами
       </h3>
     </div>
   </div>
+
 </template>
