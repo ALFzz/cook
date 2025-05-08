@@ -58,13 +58,14 @@ const currentCategoryDishes = dishes.filter((dish) => dish.category === useRoute
 </script>
 
 <template>
-  <div class="pt-16">
-    <h1 class="text-[96px] text-center">{{currentCategory.label}}</h1>
-    <h3 class="text-[24px] px-36 pt-8">{{currentCategory.description}}</h3>
+  <div class="pt-16 max-sm:text-center">
+    <h1 class="text-[96px] max-sm:text-[60px] text-center">{{currentCategory.label}}</h1>
+    <h3 class="text-[24px] px-36 max-md:px-10 max-sm:text-[18px] pt-8">{{currentCategory.description}}</h3>
   </div>
 
-  <div class="grid grid-cols-2 gap-10 p-24 pb-4">
+  <div class="grid grid-cols-2 max-lg:grid-cols-1 gap-10 p-24 max-sm:p-12 pb-4">
     <RecipesItem
+        class=""
       v-for="(item, index) in currentCategoryDishes"
       :key="index"
       :img="item.img"
