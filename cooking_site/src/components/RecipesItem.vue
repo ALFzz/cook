@@ -1,11 +1,13 @@
 <script setup>
 import { HeartIcon } from '@heroicons/vue/24/solid/index.js'
 import { ref } from 'vue'
+import {useRoute, useRouter} from "vue-router";
 
 defineProps({
   img: String,
-  label: String,
+  recipe: String,
   time: String,
+  id: Number
 })
 
 const isLiked = ref(false)
@@ -13,6 +15,8 @@ const isLiked = ref(false)
 function toggleLike() {
   isLiked.value = !isLiked.value
 }
+
+const router = useRoute()
 </script>
 
 <template>
@@ -20,13 +24,13 @@ function toggleLike() {
     <h2
       class="text-center text-[24px] max-sm:text-[14px] overflow-hidden whitespace-nowrap text-ellipsis"
     >
-      {{ label }}
+      {{ recipe }}
     </h2>
     <img
       :src="`/src/assets/img/${img}`"
       alt="pumpkin_soup"
       class="cursor-pointer"
-      @click.prevent="$router.push({ name: 'Cooking' })"
+      @click.prevent="$router.push(router.fullPath + '/' + id)"
     />
     <div class="flex flex-row items-center justify-between">
       <h2 class="text-[24px] max-sm:text-[14px]">Время приготовления: {{ time }}</h2>

@@ -80,6 +80,12 @@ const router = createRouter({
       path: '/review_form',
       component: ReviewForm,
     },
+    {
+      name: 'Cooking',
+      path: '/categories/:label/:id',
+      component: Cooking,
+    },
+
   ],
 })
 

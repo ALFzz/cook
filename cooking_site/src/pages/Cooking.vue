@@ -4,20 +4,22 @@ import CookingRequirements from '@/components/CookingRequirements.vue'
 import ReviewItem from '@/components/ReviewItem.vue'
 import ReviewModal from '@/components/ReviewModal.vue'
 import { ref } from 'vue'
+import {useRoute} from "vue-router";
+import {getCurrentDishById} from "@/dishes.js";
 
-const reviews = [
-  'Рецепт просто супер! Получилось очень вкусно, вся семья в восторге. Спасибо!',
-  'Готовила впервые, всё получилось идеально! Рецепт очень простой и понятный, даже для новичка. Вкус просто восхитительный!',
-  'Этот рецепт вишневого пирога стал моим любимым! Готовлю его уже несколько раз и каждый раз получается превосходно. Спасибо за такой чудесный рецепт!',
-  'Отличный рецепт! И вкусно, и полезно. Идеально для тех, кто следит за своим здоровьем. Обязательно буду готовить еще!',
-  'Очень рекомендую рецепт куриного бульона! Простой в приготовлении, из доступных ингредиентов, а результат превосходит все ожидания!',
-]
+
 
 const showReviewModal = ref(false)
+
+
+const currentDish = getCurrentDishById(Number(useRoute().params.id))
+
+console.log(currentDish)
+
 </script>
 
 <template>
-  <CookingPreparations />
+  <CookingPreparations :dish="currentDish" />
   <CookingRequirements />
   <div
     class="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center mt-12 sm:mt-16 px-6 sm:px-12 lg:px-24"
@@ -32,11 +34,11 @@ const showReviewModal = ref(false)
   </div>
 
   <ReviewItem
-    v-for="(text, index) in reviews"
+    v-for="(text, index) in currentDish.reviews"
     :key="index"
     :review="text"
     :is-in-cooking="true"
-    :class="index === reviews.length - 1 ? 'mb-12' : ''"
+    :class="index === currentDish.reviews.length - 1 ? 'mb-12' : ''"
   />
 
   <ReviewModal :is-open="showReviewModal" @closeModal="showReviewModal = false" />

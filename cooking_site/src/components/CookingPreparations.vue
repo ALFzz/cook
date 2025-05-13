@@ -1,4 +1,10 @@
-<script setup></script>
+<script setup>
+
+defineProps({
+  dish: Object
+})
+
+</script>
 
 <template>
   <div class="flex flex-col lg:flex-row w-full mt-14 max-lg:mt-0">
@@ -6,7 +12,7 @@
     <div class="w-full lg:w-1/2 ml-24 max-lg:ml-0">
       <img
         class="w-full h-[500px] object-cover"
-        src="/src/assets/img/cake_recipe.png"
+        :src="`/src/assets/img/${dish.img}`"
         alt="cake_recipe"
       />
     </div>
@@ -63,10 +69,9 @@
 </template>
 
 <style scoped>
-/* Картинка будет адаптироваться под размер экрана */
 img {
   width: 100%;
   height: auto;
-  object-fit: cover; /* Обеспечиваем правильное обрезание картинки */
+  object-fit: cover;
 }
 </style>

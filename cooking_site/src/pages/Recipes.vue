@@ -1,6 +1,7 @@
 <script setup>
 import RecipesItem from '@/components/RecipesItem.vue'
 import { useRoute } from 'vue-router'
+import {getCurrentCategoryDishes} from "@/dishes.js";
 
 const headers = [
   {
@@ -36,49 +37,12 @@ const labelMap = {
 
 const currentCategory = headers[labelMap[useRoute().params.label]]
 
-const dishes = [
-  { label: 'Тыквенный крем-суп', time: '40-50 минут', img: 'pumpkin_soup.png', category: 'первое' },
-  { label: 'Суп солянка', time: '1.5-2 часа', img: 'solyanka.png', category: 'первое' },
-  { label: 'Грибной бульон', time: '1-1.5 часа', img: 'mushroom.png', category: 'первое' },
-  { label: 'Куриный бульон', time: '1.5-2 часа', img: 'chicken.png', category: 'первое' },
-  { label: 'Окрошка на кефире', time: '20-30 минут', img: 'okroshka.png', category: 'первое' },
-  { label: 'Борщ с говядиной', time: '2-2.5 часа', img: 'borsch.png', category: 'первое' },
-  { label: 'Карбонара', time: '20-30 минут', img: 'carbonara.png', category: 'второе' },
-  { label: 'Пельмени', time: '1.5-2 часа', img: 'dumplings.png', category: 'второе' },
-  { label: 'Мясо по-франзцуски', time: '1.5-2 часа', img: 'french_meat.png', category: 'второе' },
-  { label: 'Говяжий стейк', time: '5-15 минут', img: 'steak.png', category: 'второе' },
-  { label: 'Лазанья', time: '1.5-2 часа', img: 'lasagna.png', category: 'второе' },
-  { label: 'Блинчики с мясом', time: '1-1.5 часа', img: 'meat_pancakes.png', category: 'второе' },
-  { label: 'Кростини', time: '15-20 минут', img: 'crostini.png', category: 'закуски' },
-  {
-    label: 'Шарики из крабовых палочек в сырной панировке',
-    time: '30-40 минут',
-    img: 'crab.png',
-    category: 'закуски',
-  },
-  { label: 'Свекольные пхали', time: '1-1.5 часа', img: 'phali.png', category: 'закуски' },
-  {
-    label: 'Рулет из лаваша с красной рыбой и латуком',
-    time: '20-30 минут',
-    img: 'roll.png',
-    category: 'закуски',
-  },
-  { label: 'Овощные канапе с сыром', time: '20-30 минут', img: 'canape.png', category: 'закуски' },
-  { label: 'Гуакамоле с авокадо', time: '10-15 минут', img: 'guacamole.png', category: 'закуски' },
-  { label: 'Пахлава', time: '2-3 часа', img: 'pahlava.png', category: 'десерты' },
-  { label: 'Чизкейк', time: '4-5 часов', img: 'cheesecake.png', category: 'десерты' },
-  {
-    label: 'Ванильное мороженое',
-    time: '4–6 часов',
-    img: 'vanile_icecream.png',
-    category: 'десерты',
-  },
-  { label: 'Круассаны с шоколадом', time: '4-5 часов', img: 'croissant.png', category: 'десерты' },
-  { label: 'Пирог с вишней', time: '1,5–2 часа', img: 'chery_pie.png', category: 'десерты' },
-  { label: 'Капкейки', time: 'около 1 часа', img: 'cupcake.png', category: 'десерты' },
-]
 
-const currentCategoryDishes = dishes.filter((dish) => dish.category === useRoute().params.label)
+
+
+const currentCategoryDishes = getCurrentCategoryDishes()
+
+console.log(useRoute().fullPath)
 </script>
 
 <template>
@@ -92,10 +56,11 @@ const currentCategoryDishes = dishes.filter((dish) => dish.category === useRoute
   <div class="grid grid-cols-2 max-lg:grid-cols-1 gap-10 p-24 max-sm:p-12 pb-4">
     <RecipesItem
       class=""
-      v-for="(item, index) in currentCategoryDishes"
-      :key="index"
+      v-for="(item) in currentCategoryDishes"
+      :key="item.id"
+      :id="item.id"
       :img="item.img"
-      :label="item.label"
+      :recipe="item.label"
       :time="item.time"
     />
   </div>
