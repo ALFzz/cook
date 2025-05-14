@@ -16,6 +16,7 @@ const currentDish = getCurrentDishById(Number(useRoute().params.id))
 
 console.log(currentDish)
 
+
 </script>
 
 <template>
@@ -41,7 +42,7 @@ console.log(currentDish)
     :class="index === currentDish.reviews.length - 1 ? 'mb-12' : ''"
   />
 
-  <ReviewModal :is-open="showReviewModal" @closeModal="showReviewModal = false" />
+  <ReviewModal :is-open="showReviewModal" :current-dish="currentDish" :is-recipe-review="true" @closeModal="showReviewModal = false" />
 </template>
 
 <style scoped></style>

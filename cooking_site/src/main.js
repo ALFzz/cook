@@ -12,7 +12,8 @@ import TheCabinet from '@/pages/TheCabinet.vue'
 import { createPinia } from 'pinia'
 import { initializeApp } from 'firebase/app'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
-import ReviewForm from '@/pages/ReviewForm.vue'
+import ReviewForm from '@/pages/RecipeForm.vue'
+import RecipeForm from "@/pages/RecipeForm.vue";
 
 const firebaseConfig = {
   apiKey: 'AIzaSyD1galntS5EzRz3XFbt_tNvEblecX9EJr8',
@@ -76,9 +77,9 @@ const router = createRouter({
       component: Recipes,
     },
     {
-      name: 'ReviewForm',
-      path: '/review_form',
-      component: ReviewForm,
+      name: 'RecipeForm',
+      path: '/recipe_form',
+      component: RecipeForm,
     },
     {
       name: 'Cooking',

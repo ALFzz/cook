@@ -42,7 +42,6 @@ const currentCategory = headers[labelMap[useRoute().params.label]]
 
 const currentCategoryDishes = getCurrentCategoryDishes()
 
-console.log(useRoute().fullPath)
 </script>
 
 <template>

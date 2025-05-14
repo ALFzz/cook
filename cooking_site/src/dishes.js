@@ -9,7 +9,7 @@ const dishes = [
         category: 'первое',
         reviews: ['Рецепт просто супер! Получилось очень вкусно, вся семья в восторге. Спасибо!'],
     },
-    { id: 1, label: 'Суп солянка', time: '1.5-2 часа', img: 'solyanka.png', category: 'первое', reviews: ['Рецепт хуета'], },
+    { id: 1, label: 'Суп солянка', time: '1.5-2 часа', img: 'solyanka.png', category: 'первое', reviews: ['Рецепт не очень'], },
     { id: 2, label: 'Грибной бульон', time: '1-1.5 часа', img: 'mushroom.png', category: 'первое', reviews: [] },
     { id: 3, label: 'Куриный бульон', time: '1.5-2 часа', img: 'chicken.png', category: 'первое', reviews: [] },
     { id: 4, label: 'Окрошка на кефире', time: '20-30 минут', img: 'okroshka.png', category: 'первое', reviews: [] },

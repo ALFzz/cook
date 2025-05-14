@@ -13,7 +13,7 @@ defineProps({
       <img
         class="w-full h-[500px] object-cover"
         :src="`/src/assets/img/${dish.img}`"
-        alt="cake_recipe"
+        :alt="dish.label"
       />
     </div>
 
@@ -31,11 +31,18 @@ defineProps({
       <div class="flex flex-col lg:flex-row gap-8 lg:gap-20">
         <div>
           <h2 class="text-lg sm:text-xl lg:text-2xl">Ингредиенты:</h2>
-          <h2 class="font-semibold text-sm sm:text-lg lg:text-xl">Для основы:</h2>
-          <ul class="list-disc ml-6 sm:ml-8 mb-5">
+          <ul class="list-disc ml-6 sm:ml-8 mb-5 mt-7">
             <li>Песочное печенье (типа Юбилейное, Digestive) — 200 г</li>
             <li>Масло сливочное — 100 г</li>
             <li>Сахар — 1 ст. л. (по желанию)</li>
+            <li>Творожный сливочный сыр (например, Philadelphia) — 600 г</li>
+            <li>Сметана (20–25%) — 200 г</li>
+            <li>Сахар — 150–180 г</li>
+            <li>Яйца — 3 шт.</li>
+            <li>Ванильный экстракт — 1 ч. л. (или ванильный сахар — 1 пакетик)</li>
+            <li>Крахмал кукурузный — 1 ст. л.</li>
+            <li>Щепотка соли</li>
+            <li>Цедра лимона (по желанию) — 0.5 ч. л.</li>
           </ul>
         </div>
 
@@ -51,19 +58,6 @@ defineProps({
         </div>
       </div>
 
-      <div class="mt-5">
-        <h2 class="font-semibold text-lg sm:text-xl lg:text-2xl">Для сырной начинки:</h2>
-        <ul class="list-disc ml-6 sm:ml-8">
-          <li>Творожный сливочный сыр (например, Philadelphia) — 600 г</li>
-          <li>Сметана (20–25%) — 200 г</li>
-          <li>Сахар — 150–180 г</li>
-          <li>Яйца — 3 шт.</li>
-          <li>Ванильный экстракт — 1 ч. л. (или ванильный сахар — 1 пакетик)</li>
-          <li>Крахмал кукурузный — 1 ст. л.</li>
-          <li>Щепотка соли</li>
-          <li>Цедра лимона (по желанию) — 0.5 ч. л.</li>
-        </ul>
-      </div>
     </div>
   </div>
 </template>

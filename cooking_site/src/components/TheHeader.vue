@@ -14,12 +14,10 @@ const emit = defineEmits(['toggleModal'])
 
 function handleClick() {
   onAuthStateChanged(getAuth(), (user) => {
-    console.log(user)
     if (user) {
       router.push('/cabinet')
       return true
     } else {
-      console.log('false')
       emit('toggleModal')
     }
   })

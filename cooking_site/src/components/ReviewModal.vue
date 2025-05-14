@@ -1,9 +1,50 @@
 <script setup>
-import { ref } from 'vue'
+import {nextTick, ref} from 'vue'
+import {getCurrentDishById} from "@/dishes.js";
+import {useRoute} from "vue-router";
 
-defineProps({ isOpen: Boolean })
+const props = defineProps({
+  isOpen: Boolean,
+  isRecipeReview: Boolean,
+  generalReviews: Array
+})
 
-const emit = defineEmits(['closeModal'])
+const emit = defineEmits(['closeModal', 'addGeneralReview'],)
+
+const review = ref('')
+
+// async function submitReview() {
+//   if (props.currentDish.id !== undefined && review.value !== '') {
+//     props.currentDish.reviews.push(review.value)
+//     emit('closeModal')
+//     await nextTick()
+//   }
+//   else {
+//     props.generalReviews.push(review.value)
+//     emit('closeModal')
+//     await nextTick()
+//   }
+// }
+
+const dishId = (Number(useRoute().params.id))
+
+
+
+
+async function submitReview() {
+  if (props.isRecipeReview && review.value !== '') {
+    const currentDish = getCurrentDishById(dishId)
+    currentDish.reviews.push(review.value)
+  }
+  else {
+    emit('addGeneralReview', review.value)
+  }
+
+  review.value = ''
+  emit('closeModal')
+  await nextTick()
+}
+
 </script>
 
 <template>
@@ -19,10 +60,11 @@ const emit = defineEmits(['closeModal'])
         >
           <div class="w-full h-full flex flex-col items-center justify-center rounded-lg">
             <textarea
+                v-model="review"
               class="bg-white text-black w-11/12 h-64 rounded-lg pl-5 pt-5 mt-5 resize-none"
             ></textarea>
             <button
-              @click="isOpen = false"
+              @click="submitReview"
               class="px-12 py-3 transition duration-200 hover:bg-gray-300 text-center text-[32px] border-black border rounded-3xl shadow-2xl bg-white text-black mt-7"
             >
               оставить отзыв
