@@ -24,7 +24,7 @@ defineProps({
     <div>
       <h2 class="text-[24px] sm:text-[26px] lg:text-[28px]">Подача</h2>
       <h3
-          class="ml-6 sm:ml-8 lg:ml-10 mt-5 mb-12 text-[18px] sm:text-[20px] lg:text-[22px] leading-relaxed"
+          class="ml-6 sm:ml-8 lg:ml-14 mt-5 mb-12 text-[18px] sm:text-[20px] lg:text-[22px] leading-relaxed"
       >
         {{dish.serving}}
       </h3>

@@ -463,3 +463,7 @@ export function getCurrentDishById(dishId) {
 export function createDish(dish) {
     dishes.value.push(dish)
 }
+
+export function getDishesLength() {
+    return dishes.value.length
+}
