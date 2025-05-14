@@ -1,18 +1,22 @@
 <script setup>
-import {ref} from "vue";
+import {nextTick, ref} from "vue";
+import {useRoute} from "vue-router";
+import {createDish} from "@/dishes.js";
 
 const previewUrl = ref(null)
 
 
 
 
-const title = ref('')
+const label = ref('')
 const description = ref('')
 const ingredients = ref([])
 const equipment = ref([])
 const steps = ref([])
 const serving = ref('')
 const photo = ref(null)
+
+const route = useRoute()
 
 const handleFileUpload = (e) => {
   photo.value = e.target.files[0]
@@ -22,16 +26,22 @@ const handleFileUpload = (e) => {
   }
 }
 
-const saveRecipe = () => {
-  const newRecipe = {
-    title: title.value,
+console.log(route.query)
+
+async function submit()  {
+  createDish({
+    label: label.value,
     description: description.value,
+    category: route.query.category,
     ingredients: ingredients.value.split('\n'),
     equipment: equipment.value.split('\n'),
     steps: steps.value.split('\n'),
     serving: serving.value,
     photo: photo.value,
-  }
+  })
+
+  await nextTick()
+
 
 }
 </script>
@@ -46,7 +56,7 @@ const saveRecipe = () => {
             <img :src="previewUrl" alt="preview" class="object-contain w-full h-full rounded" />
           </div>
 
-          <!-- Кнопка (выше по z-index) -->
+
           <label
               for="fileInput"
               class="cursor-pointer absolute mb-5 bottom-2 left-1/2 transform -translate-x-1/2 text-[20px] w-fit px-5 py-3 text-center border-black border rounded-2xl shadow-2xl bg-white text-black z-10"
@@ -54,7 +64,7 @@ const saveRecipe = () => {
             добавить фото
           </label>
 
-          <!-- Скрытый input -->
+
           <input
               id="fileInput"
               type="file"
@@ -117,7 +127,7 @@ const saveRecipe = () => {
     <!-- Кнопка сохранить -->
     <div class="mt-8 mb-10 flex justify-end">
       <button
-          @click="saveRecipe"
+          @click="submit"
           class="text-[20px] w-fit px-8 py-3 text-center border-black border rounded-2xl shadow-2xl bg-gray-300 text-black"
       >
         сохранить рецепт

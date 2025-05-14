@@ -14,14 +14,13 @@ const showReviewModal = ref(false)
 
 const currentDish = getCurrentDishById(Number(useRoute().params.id))
 
-console.log(currentDish)
 
 
 </script>
 
 <template>
   <CookingPreparations :dish="currentDish" />
-  <CookingRequirements />
+  <CookingRequirements :dish="currentDish"/>
   <div
     class="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center mt-12 sm:mt-16 px-6 sm:px-12 lg:px-24"
   >

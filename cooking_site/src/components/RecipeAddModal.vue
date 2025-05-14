@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import {useRouter} from "vue-router";
 
 defineProps({ isOpen: Boolean })
 
@@ -11,6 +12,14 @@ const categories = ['первое', 'закуски', 'второе', 'десе�
 
 function selectCategory(category) {
   selected.value = category
+}
+
+const router = useRouter()
+
+function goToForm() {
+  if (selected.value) {
+    router.push({name: 'RecipeForm', query: {category: selected.value}})
+  }
 }
 </script>
 
@@ -47,7 +56,7 @@ function selectCategory(category) {
 
           <div class="text-center text-black mt-6">
             <button
-              @click="signIn"
+              @click="goToForm"
               class="px-8 py-2 text-base sm:text-lg border border-black bg-gray-300 rounded hover:bg-gray-400 transition"
             >
               добавить рецепт
