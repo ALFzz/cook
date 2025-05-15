@@ -1,15 +1,15 @@
 <script setup>
-import {nextTick, ref} from 'vue'
-import {getCurrentRecipeById} from "@/recipes.js";
-import {useRoute} from "vue-router";
+import { nextTick, ref } from 'vue'
+import { getCurrentRecipeById } from '@/recipes.js'
+import { useRoute } from 'vue-router'
 
 const props = defineProps({
   isOpen: Boolean,
   isRecipeReview: Boolean,
-  generalReviews: Array
+  generalReviews: Array,
 })
 
-const emit = defineEmits(['closeModal', 'addGeneralReview'],)
+const emit = defineEmits(['closeModal', 'addGeneralReview'])
 
 const review = ref('')
 
@@ -26,17 +26,13 @@ const review = ref('')
 //   }
 // }
 
-const recipeId = (Number(useRoute().params.id))
-
-
-
+const recipeId = Number(useRoute().params.id)
 
 async function submitReview() {
   if (props.isRecipeReview && review.value !== '') {
     const currentRecipe = getCurrentRecipeById(recipeId)
     currentRecipe.reviews.push(review.value)
-  }
-  else {
+  } else {
     emit('addGeneralReview', review.value)
   }
 
@@ -44,7 +40,6 @@ async function submitReview() {
   emit('closeModal')
   await nextTick()
 }
-
 </script>
 
 <template>
@@ -60,7 +55,7 @@ async function submitReview() {
         >
           <div class="w-full h-full flex flex-col items-center justify-center rounded-lg">
             <textarea
-                v-model="review"
+              v-model="review"
               class="bg-white text-black w-11/12 h-64 rounded-lg pl-5 pt-5 mt-5 resize-none"
             ></textarea>
             <button

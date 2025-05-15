@@ -46,7 +46,6 @@ const signIn = async () => {
         >
           <h2 class="text-xl text-center text-[30px] mb-10">Вход в личный кабинет</h2>
 
-
           <div class="flex flex-col px-5">
             <p class="text-start">электронная почта</p>
             <input type="email" v-model="email" class="bg-[#456356] pl-2 h-12 rounded-2xl" />
@@ -60,7 +59,7 @@ const signIn = async () => {
           <div class="text-center">
             <button
               @click="signIn"
-              class="px-16 py-4 mt-10  text-[28px] bg-[#374d43] rounded hover:bg-gray-400 transition"
+              class="px-16 py-4 mt-10 text-[28px] bg-[#374d43] rounded hover:bg-gray-400 transition"
             >
               войти
             </button>
@@ -87,8 +86,7 @@ const signIn = async () => {
         >
           <h2 class="text-xl text-center text-[30px] mb-10">Регистрация</h2>
 
-
-          <div class="flex flex-col px-5 ">
+          <div class="flex flex-col px-5">
             <p class="text-start">электронная почта</p>
             <input type="email" v-model="email" class="bg-[#456356] h-12 pl-2 rounded-2xl" />
           </div>

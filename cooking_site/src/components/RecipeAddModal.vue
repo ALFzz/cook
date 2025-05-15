@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import {useRouter} from "vue-router";
+import { useRouter } from 'vue-router'
 
 defineProps({ isOpen: Boolean })
 
@@ -18,7 +18,7 @@ const router = useRouter()
 
 function goToForm() {
   if (selected.value) {
-    router.push({name: 'RecipeForm', query: {category: selected.value}})
+    router.push({ name: 'RecipeForm', query: { category: selected.value } })
   }
 }
 </script>

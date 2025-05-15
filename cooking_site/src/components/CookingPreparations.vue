@@ -1,10 +1,7 @@
 <script setup>
-
 defineProps({
-  recipe: Object
+  recipe: Object,
 })
-
-
 </script>
 
 <template>
@@ -23,17 +20,15 @@ defineProps({
       class="flex flex-col w-full lg:w-1/2 text-base sm:text-sm md:text-lg lg:text-xl pl-6 sm:pl-8 lg:pl-12 pr-6 sm:pr-8 lg:pr-12 mt-6 lg:mt-0"
     >
       <h3 class="mb-5 text-justify leading-relaxed">
-        {{recipe.description}}
+        {{ recipe.description }}
       </h3>
 
       <div class="flex flex-col lg:flex-row gap-8 lg:gap-20">
         <div>
           <h2 class="text-lg sm:text-xl lg:text-2xl">Ингредиенты:</h2>
           <ul class="list-disc ml-6 sm:ml-8 mb-5 mt-7">
-            <li
-                v-for="(ingredient, index) in recipe.ingredients"
-                :key="index">
-              {{ingredient}}
+            <li v-for="(ingredient, index) in recipe.ingredients" :key="index">
+              {{ ingredient }}
             </li>
           </ul>
         </div>
@@ -41,15 +36,12 @@ defineProps({
         <div>
           <h2 class="text-lg sm:text-xl lg:text-2xl">Инвентарь:</h2>
           <ul class="list-disc ml-6 sm:ml-8 mt-7">
-            <li
-                v-for="(product, index) in recipe.equipment"
-                :key="index">
-              {{product}}
+            <li v-for="(product, index) in recipe.equipment" :key="index">
+              {{ product }}
             </li>
           </ul>
         </div>
       </div>
-
     </div>
   </div>
 </template>

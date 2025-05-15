@@ -2,7 +2,7 @@
 import TheReviewsBanner from '@/components/TheReviewsBanner.vue'
 import ReviewItem from '@/components/ReviewItem.vue'
 import ReviewModal from '@/components/ReviewModal.vue'
-import {onMounted, ref, watch} from 'vue'
+import { onMounted, ref, watch } from 'vue'
 
 const generalReviews = ref([
   'Рецепт просто супер! Получилось очень вкусно, вся семья в восторге. Спасибо!',
@@ -19,16 +19,19 @@ onMounted(() => {
   }
 })
 
-watch(generalReviews, (val) => {
-  localStorage.setItem('generalReviews', JSON.stringify(val))
-}, { deep: true })
+watch(
+  generalReviews,
+  (val) => {
+    localStorage.setItem('generalReviews', JSON.stringify(val))
+  },
+  { deep: true },
+)
 
 const showReviewModal = ref(false)
 
 function handleAdd(review) {
   generalReviews.value.push(review)
 }
-
 </script>
 
 <template>
@@ -40,6 +43,10 @@ function handleAdd(review) {
     :class="index === generalReviews.length - 1 ? 'mb-12' : ''"
   />
 
-  <ReviewModal :is-open="showReviewModal" @addGeneralReview="handleAdd" :general-reviews="generalReviews"  @closeModal="showReviewModal = false" />
+  <ReviewModal
+    :is-open="showReviewModal"
+    @addGeneralReview="handleAdd"
+    :general-reviews="generalReviews"
+    @closeModal="showReviewModal = false"
+  />
 </template>
-

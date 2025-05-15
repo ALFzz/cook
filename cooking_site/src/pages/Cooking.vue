@@ -4,23 +4,17 @@ import CookingRequirements from '@/components/CookingRequirements.vue'
 import ReviewItem from '@/components/ReviewItem.vue'
 import ReviewModal from '@/components/ReviewModal.vue'
 import { ref } from 'vue'
-import {useRoute} from "vue-router";
-import {getCurrentRecipeById} from "@/recipes.js";
-
-
+import { useRoute } from 'vue-router'
+import { getCurrentRecipeById } from '@/recipes.js'
 
 const showReviewModal = ref(false)
 
-
 const currentRecipe = getCurrentRecipeById(Number(useRoute().params.id))
-
-
-
 </script>
 
 <template>
   <CookingPreparations :recipe="currentRecipe" />
-  <CookingRequirements :recipe="currentRecipe"/>
+  <CookingRequirements :recipe="currentRecipe" />
   <div
     class="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center mt-12 sm:mt-16 px-6 sm:px-12 lg:px-24"
   >
@@ -41,7 +35,11 @@ const currentRecipe = getCurrentRecipeById(Number(useRoute().params.id))
     :class="index === currentRecipe.reviews.length - 1 ? 'mb-12' : ''"
   />
 
-  <ReviewModal :is-open="showReviewModal" :is-recipe-review="true" @closeModal="showReviewModal = false" />
+  <ReviewModal
+    :is-open="showReviewModal"
+    :is-recipe-review="true"
+    @closeModal="showReviewModal = false"
+  />
 </template>
 
 <style scoped></style>
