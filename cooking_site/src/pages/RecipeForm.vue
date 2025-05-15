@@ -2,7 +2,7 @@
 import {ref, nextTick} from "vue";
 import {useRoute, useRouter} from "vue-router";
 import axios from 'axios';
-import {createDish, getDishesLength} from "@/dishes.js";
+import {createRecipe, getRecipesLength} from "@/recipes.js";
 
 const previewUrl = ref(null);
 const label = ref('');
@@ -28,9 +28,9 @@ async function submit() {
   const formData = new FormData();
   formData.append('image', photo.value);
 
-  createDish({
-    id: getDishesLength(),
-    label: label.value, // название блюда
+  createRecipe({
+    id: getRecipesLength(),
+    label: label.value,
     description: description.value,
     category: route.query.category,
     ingredients: ingredients.value.split('\n'),
@@ -41,7 +41,7 @@ async function submit() {
     reviews: [],
     img: photo.value.name,
   });
-  console.log(photo.value)
+
 
   try {
     const response = await axios.post('http://localhost:3000/upload', formData, {

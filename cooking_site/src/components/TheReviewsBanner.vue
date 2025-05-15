@@ -12,12 +12,12 @@ const emit = defineEmits(['toggleModal'])
       <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
         <h1
           @click="$emit('toggleModal')"
-          class="font-black cursor-pointer transition duration-300 hover:text-[#EEEA88] text-[14px] sm:text-[16px] md:text-[20px] lg:text-[28px] xl:text-[38px]"
+          class="font-black cursor-pointer transition duration-300 hover:text-[#EEEA88] text-[14px] sm:text-[18px] md:text-[22px] lg:text-[30px] xl:text-[36px] 2xl:text-[46px]"
         >
           Оставьте свой отзыв!
         </h1>
         <h1
-          class="font-semibold text-[12px] sm:text-[14px] md:text-[18px] lg:text-[24px] xl:text-[32px]"
+          class="font-semibold text-[14px] sm:text-[18px] md:text-[22px] lg:text-[30px] xl:text-[36px] 2xl:text-[46px]"
         >
           Вы помогаете нам стать лучше:)
         </h1>

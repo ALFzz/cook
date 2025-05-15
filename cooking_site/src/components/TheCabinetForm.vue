@@ -3,14 +3,13 @@ import {getAuth, onAuthStateChanged} from "firebase/auth";
 import {doc, getDoc, getFirestore} from "firebase/firestore";
 import {onMounted, ref} from "vue";
 import {useRouter} from "vue-router";
-import TheCabinetAvatar from "@/components/TheCabinetAvatar.vue";
+
 
 const router = useRouter()
 const auth = getAuth();
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    // Пользователь вошёл
     document.getElementById("email").innerHTML = user.email;
   } else {
     console.log("Пользователь не авторизован");

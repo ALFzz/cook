@@ -5,22 +5,22 @@ import ReviewItem from '@/components/ReviewItem.vue'
 import ReviewModal from '@/components/ReviewModal.vue'
 import { ref } from 'vue'
 import {useRoute} from "vue-router";
-import {getCurrentDishById} from "@/dishes.js";
+import {getCurrentRecipeById} from "@/recipes.js";
 
 
 
 const showReviewModal = ref(false)
 
 
-const currentDish = getCurrentDishById(Number(useRoute().params.id))
+const currentRecipe = getCurrentRecipeById(Number(useRoute().params.id))
 
 
 
 </script>
 
 <template>
-  <CookingPreparations :dish="currentDish" />
-  <CookingRequirements :dish="currentDish"/>
+  <CookingPreparations :recipe="currentRecipe" />
+  <CookingRequirements :recipe="currentRecipe"/>
   <div
     class="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center mt-12 sm:mt-16 px-6 sm:px-12 lg:px-24"
   >
@@ -34,14 +34,14 @@ const currentDish = getCurrentDishById(Number(useRoute().params.id))
   </div>
 
   <ReviewItem
-    v-for="(text, index) in currentDish.reviews"
+    v-for="(text, index) in currentRecipe.reviews"
     :key="index"
     :review="text"
     :is-in-cooking="true"
-    :class="index === currentDish.reviews.length - 1 ? 'mb-12' : ''"
+    :class="index === currentRecipe.reviews.length - 1 ? 'mb-12' : ''"
   />
 
-  <ReviewModal :is-open="showReviewModal" :current-dish="currentDish" :is-recipe-review="true" @closeModal="showReviewModal = false" />
+  <ReviewModal :is-open="showReviewModal" :is-recipe-review="true" @closeModal="showReviewModal = false" />
 </template>
 
 <style scoped></style>

@@ -1,7 +1,7 @@
 <script setup>
 import RecipesItem from '@/components/RecipesItem.vue'
 import { useRoute } from 'vue-router'
-import {getCurrentCategoryDishes} from "@/dishes.js";
+import {getCurrentCategoryRecipes} from "@/recipes.js";
 
 const headers = [
   {
@@ -40,7 +40,7 @@ const currentCategory = headers[labelMap[useRoute().params.label]]
 
 
 
-const currentCategoryDishes = getCurrentCategoryDishes()
+const currentCategoryRecipes = getCurrentCategoryRecipes()
 
 </script>
 
@@ -55,7 +55,7 @@ const currentCategoryDishes = getCurrentCategoryDishes()
   <div class="grid grid-cols-2 max-lg:grid-cols-1 gap-10 p-24 max-sm:p-12 pb-4">
     <RecipesItem
       class=""
-      v-for="(item) in currentCategoryDishes"
+      v-for="(item) in currentCategoryRecipes"
       :key="item.id"
       :id="item.id"
       :img="item.img"

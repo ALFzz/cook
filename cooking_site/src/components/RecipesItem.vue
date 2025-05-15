@@ -12,7 +12,7 @@ import {
   getDoc,
   setDoc
 } from 'firebase/firestore'
-import { getCurrentDishById } from '@/dishes.js'
+import { getCurrentRecipeById } from '@/recipes.js'
 
 const props = defineProps({
   img: String,
@@ -26,7 +26,7 @@ const auth = getAuth()
 const db = getFirestore()
 const router = useRoute()
 
-// 🔄 Проверка, лайкнут ли рецепт пользователем
+
 onMounted(async () => {
   const user = auth.currentUser
   if (!user) return
@@ -48,9 +48,9 @@ async function toggleLike() {
   }
 
   const userDocRef = doc(db, 'users', user.uid)
-  const currentDish = getCurrentDishById(props.id)
+  const currentRecipe = getCurrentRecipeById(props.id)
 
-  // Мгновенно меняем UI
+
   const wasLiked = isLiked.value
   isLiked.value = !wasLiked
 
@@ -59,22 +59,22 @@ async function toggleLike() {
 
     if (!userSnap.exists()) {
       await setDoc(userDocRef, {
-        favRecipes: [currentDish]
+        favRecipes: [currentRecipe]
       })
       return
     }
 
     if (wasLiked) {
       await updateDoc(userDocRef, {
-        favRecipes: arrayRemove(currentDish)
+        favRecipes: arrayRemove(currentRecipe)
       })
     } else {
       await updateDoc(userDocRef, {
-        favRecipes: arrayUnion(currentDish)
+        favRecipes: arrayUnion(currentRecipe)
       })
     }
   } catch (error) {
-    // Откатываем UI если ошибка
+
     isLiked.value = wasLiked
     console.error('Ошибка при обновлении лайков:', error)
   }

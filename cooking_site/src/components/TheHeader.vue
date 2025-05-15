@@ -29,7 +29,7 @@ function handleClick() {
     <div class="relative flex flex-col lg:flex-row items-center justify-between gap-8 py-4">
       <!-- Меню: вертикально на мобилках, центрировано абсолютно на больших -->
       <nav
-        class="flex flex-col items-center gap-8 text-[25px] max-xl:text-[20px] max-lg:text-[25px] lg:flex-row lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2"
+        class="flex flex-col items-center gap-8 max-lg:gap-5 text-[25px] max-xl:text-[20px] max-lg:text-[25px] lg:flex-row lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2"
       >
         <RouterLink to="/categories"><h1>рецепты</h1></RouterLink>
         <RouterLink to="/"><h1>о нас</h1></RouterLink>

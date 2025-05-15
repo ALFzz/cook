@@ -2,7 +2,7 @@
 
 
 defineProps({
-  dish: Object
+  recipe: Object
 })
 
 </script>
@@ -15,7 +15,7 @@ defineProps({
         class="list-decimal  pl-20 text-[18px] sm:text-[20px] lg:text-[22px] mt-7 mb-16"
     >
       <li
-          v-for="(step, index) in dish.steps"
+          v-for="(step, index) in recipe.steps"
           :key="index">
         {{step}}
       </li>
@@ -26,7 +26,7 @@ defineProps({
       <h3
           class="ml-6 sm:ml-8 lg:ml-14 mt-5 mb-12 text-[18px] sm:text-[20px] lg:text-[22px] leading-relaxed"
       >
-        {{dish.serving}}
+        {{recipe.serving}}
       </h3>
     </div>
   </div>

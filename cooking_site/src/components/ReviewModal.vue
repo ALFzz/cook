@@ -1,6 +1,6 @@
 <script setup>
 import {nextTick, ref} from 'vue'
-import {getCurrentDishById} from "@/dishes.js";
+import {getCurrentRecipeById} from "@/recipes.js";
 import {useRoute} from "vue-router";
 
 const props = defineProps({
@@ -14,8 +14,8 @@ const emit = defineEmits(['closeModal', 'addGeneralReview'],)
 const review = ref('')
 
 // async function submitReview() {
-//   if (props.currentDish.id !== undefined && review.value !== '') {
-//     props.currentDish.reviews.push(review.value)
+//   if (props.currentRecipe.id !== undefined && review.value !== '') {
+//     props.currentRecipe.reviews.push(review.value)
 //     emit('closeModal')
 //     await nextTick()
 //   }
@@ -26,15 +26,15 @@ const review = ref('')
 //   }
 // }
 
-const dishId = (Number(useRoute().params.id))
+const recipeId = (Number(useRoute().params.id))
 
 
 
 
 async function submitReview() {
   if (props.isRecipeReview && review.value !== '') {
-    const currentDish = getCurrentDishById(dishId)
-    currentDish.reviews.push(review.value)
+    const currentRecipe = getCurrentRecipeById(recipeId)
+    currentRecipe.reviews.push(review.value)
   }
   else {
     emit('addGeneralReview', review.value)

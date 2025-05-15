@@ -1,7 +1,7 @@
 import {useRoute} from "vue-router";
 import {ref} from "vue";
 
-const dishes = ref([
+const recipes = ref([
     {
         id: 0,
         label: 'Тыквенный крем-суп',
@@ -451,19 +451,19 @@ const dishes = ref([
 ])
 
 
-export function getCurrentCategoryDishes() {
-    return dishes.value.filter((dish) => dish.category === useRoute().params.label)
+export function getCurrentCategoryRecipes() {
+    return recipes.value.filter((recipe) => recipe.category === useRoute().params.label)
 }
 
-export function getCurrentDishById(dishId) {
-    return dishes.value.find((dish) => dish.id === dishId)
+export function getCurrentRecipeById(recipeId) {
+    return recipes.value.find((recipe) => recipe.id === recipeId)
 
 }
 
-export function createDish(dish) {
-    dishes.value.push(dish)
+export function createRecipe(recipe) {
+    recipes.value.push(recipe)
 }
 
-export function getDishesLength() {
-    return dishes.value.length
+export function getRecipesLength() {
+    return recipes.value.length
 }
