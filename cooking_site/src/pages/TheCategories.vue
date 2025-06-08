@@ -1,6 +1,5 @@
 <script setup>
 import TheCategoriesBanner from '@/components/TheCategoriesBanner.vue'
-import { useRoute } from 'vue-router'
 import RecipeAddModal from '@/components/RecipeAddModal.vue'
 import { ref } from 'vue'
 

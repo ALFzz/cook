@@ -6,7 +6,6 @@ import AuthorizationModal from '@/components/AuthorizationModal.vue'
 import { onMounted, ref } from 'vue'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { useUserStore } from '@/stores/user.js'
-import RecipeAddModal from '@/components/RecipeAddModal.vue'
 
 const showAuthModal = ref(false)
 

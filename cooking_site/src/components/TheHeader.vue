@@ -1,5 +1,4 @@
 <script setup>
-import LogInModal from '@/components/AuthorizationModal.vue'
 import { MagnifyingGlassCircleIcon, Bars3Icon, XMarkIcon } from '@heroicons/vue/24/solid'
 import { ref } from 'vue'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
