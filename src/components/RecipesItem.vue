@@ -1,7 +1,7 @@
 <script setup>
 import { HeartIcon } from '@heroicons/vue/24/solid'
 import { ref, onMounted } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { getAuth } from 'firebase/auth'
 import {
   getFirestore,
