@@ -1,4 +1,18 @@
-# Logs
+### Environment ###
+.env
+.env.*
+!.env.example
+
+### Build outputs ###
+dist
+dist-ssr
+*.tsbuildinfo
+coverage
+
+### Dependencies ###
+node_modules/
+
+### Logs ###
 logs
 *.log
 npm-debug.log*
@@ -7,17 +21,11 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-.DS_Store
-dist
-dist-ssr
-coverage
-*.local
-
+### Testing ###
 /cypress/videos/
 /cypress/screenshots/
 
-# Editor directories and files
+### Editors ###
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -27,4 +35,6 @@ coverage
 *.sln
 *.sw?
 
-*.tsbuildinfo
+### System ###
+.DS_Store
+*.local
