@@ -22,6 +22,16 @@ npm install
 npm run dev
 ```
 
+### Running the Project
+First terminal (backend server):
+```sh
+node server.js
+```
+Second terminal (frontend development):
+```sh
+npm run dev
+```
+
 ### Compile and Minify for Production
 
 ```sh
