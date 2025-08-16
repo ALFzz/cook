@@ -14,7 +14,6 @@ const userStore = useUserStore()
 onMounted(() => {
   onAuthStateChanged(getAuth(), (user) => {
     if (user) {
-      console.log(user)
       userStore.userId = user.uid
     } else {
       userStore.userId = ''

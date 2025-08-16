@@ -48,7 +48,6 @@ async function submit() {
         'Content-Type': 'multipart/form-data',
       },
     })
-    console.log('Файл загружен:', response.data)
   } catch (error) {
     console.error('Ошибка загрузки файла:', error)
   }
